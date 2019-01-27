@@ -23,6 +23,8 @@ __base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 __base58_radix = len(__base58_alphabet)
 
+MIN_ENTROPY_LEN = 128
+
 
 def checksum_encode(address):
     keccak = sha3.keccak_256()
