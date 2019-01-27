@@ -24,7 +24,6 @@ __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst
 __base58_radix = len(__base58_alphabet)
 
 
-
 def checksum_encode(address):
     keccak = sha3.keccak_256()
     out = ''
@@ -96,6 +95,12 @@ def decode(data):
     return bytes(dec[::-1])
 
 
-
+def check_decode(enc):
+    dec = decode(enc)
+    raw, chk = dec[:-4], dec[-4:]
+    if chk != sha256(sha256(raw).digest()).digest()[:4]:
+        raise ValueError("base58 decoding checksum error")
+    else:
+        return raw
 
 
