@@ -20,8 +20,6 @@ from two1.bitcoin.utils import rand_bytes
 from ecdsa.ecdsa import int_to_string, string_to_int
 
 
-
-
 def checksum_encode(address):
     keccak = sha3.keccak_256()
     out = ''
