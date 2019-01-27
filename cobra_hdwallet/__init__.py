@@ -26,6 +26,7 @@ __base58_radix = len(__base58_alphabet)
 MIN_ENTROPY_LEN = 128
 BIP32_HARDEN = 0x80000000
 CURVE_GEN = ecdsa.ecdsa.generator_secp256k1
+CURVE_ORDER = CURVE_GEN.order()
 
 
 def checksum_encode(address):
