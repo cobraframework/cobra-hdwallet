@@ -24,6 +24,7 @@ __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst
 __base58_radix = len(__base58_alphabet)
 
 
+
 def checksum_encode(address):
     keccak = sha3.keccak_256()
     out = ''
@@ -71,6 +72,10 @@ def encode(data):
     n = len(data) - len(data.lstrip(b'\0'))
     return __base58_alphabet[0] * n + enc
 
+
+def check_encode(raw):
+    chk = sha256(sha256(raw).digest()).digest()[:4]
+    return encode(raw + chk)
 
 
 def decode(data):
