@@ -24,7 +24,6 @@ __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst
 __base58_radix = len(__base58_alphabet)
 
 
-
 def checksum_encode(address):
     keccak = sha3.keccak_256()
     out = ''
@@ -60,13 +59,36 @@ def __string_to_int(data):
     return val
 
 
+def encode(data):
+    enc = ''
+    val = __string_to_int(data)
+    while val >= __base58_radix:
+        val, mod = divmod(val, __base58_radix)
+        enc = __base58_alphabet[mod] + enc
+    if val:
+        enc = __base58_alphabet[val] + enc
+
+    n = len(data) - len(data.lstrip(b'\0'))
+    return __base58_alphabet[0] * n + enc
 
 
 
+def decode(data):
+    if bytes != str:
+        data = bytes(data, 'ascii')
 
+    val = 0
+    for (i, c) in enumerate(data[::-1]):
+        val += __base58_alphabet_bytes.find(c) * (__base58_radix ** i)
 
+    dec = bytearray()
+    while val >= 256:
+        val, mod = divmod(val, 256)
+        dec.append(mod)
+    if val:
+        dec.append(val)
 
-
+    return bytes(dec[::-1])
 
 
 
