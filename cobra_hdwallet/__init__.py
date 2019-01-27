@@ -27,6 +27,10 @@ MIN_ENTROPY_LEN = 128
 BIP32_HARDEN = 0x80000000
 CURVE_GEN = ecdsa.ecdsa.generator_secp256k1
 CURVE_ORDER = CURVE_GEN.order()
+FIELD_ORDER = SECP256k1.curve.p()
+INFINITY = ecdsa.ellipticcurve.INFINITY
+EX_MAIN_PRIVATE = [codecs.decode('0488ade4', 'hex')]
+EX_MAIN_PUBLIC = [codecs.decode('0488b21e', 'hex'), codecs.decode('049d7cb2', 'hex')]
 
 
 def checksum_encode(address):
@@ -108,4 +112,16 @@ def check_decode(enc):
     else:
         return raw
 
+
+class CobraHDWallet:
+
+    def __init__(self, secret, chain, depth, index, fingerprint):
+
+        self.key = ecdsa.SigningKey.from_string(secret, curve=SECP256k1)
+        self.verifiedKey = self.key.get_verifying_key()
+
+        self.chain = chain
+        self.depth = depth
+        self.index = index
+        self.parent_fingerprint = fingerprint
 
