@@ -24,6 +24,7 @@ __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst
 __base58_radix = len(__base58_alphabet)
 
 
+
 def checksum_encode(address):
     keccak = sha3.keccak_256()
     out = ''
@@ -48,6 +49,15 @@ def get_bytes(string):
     return byte
 
 
+def __string_to_int(data):
+    val = 0
+
+    if type(data) == str:
+        data = bytearray(data)
+
+    for (i, c) in enumerate(data[::-1]):
+        val += (256 ** i) * c
+    return val
 
 
 
