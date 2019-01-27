@@ -38,6 +38,15 @@ def checksum_encode(address):
     return '0x' + out
 
 
+def get_bytes(string):
+    if isinstance(string, bytes):
+        byte = string
+    elif isinstance(string, str):
+        byte = bytes.fromhex(string)
+    else:
+        raise TypeError("Agreement must be either 'bytes' or 'string'!")
+    return byte
+
 
 
 
