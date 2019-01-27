@@ -19,6 +19,10 @@ from mnemonic.mnemonic import Mnemonic
 from two1.bitcoin.utils import rand_bytes
 from ecdsa.ecdsa import int_to_string, string_to_int
 
+__base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+__base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+__base58_radix = len(__base58_alphabet)
+
 
 def checksum_encode(address):
     keccak = sha3.keccak_256()
