@@ -24,6 +24,7 @@ __base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst
 __base58_radix = len(__base58_alphabet)
 
 MIN_ENTROPY_LEN = 128
+BIP32_HARDEN = 0x80000000
 
 
 def checksum_encode(address):
