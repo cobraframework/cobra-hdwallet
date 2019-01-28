@@ -158,7 +158,18 @@ class CobraHDWallet:
         return CobraHDWallet.master_key_from_seed(
             Mnemonic.to_seed(mnemonic, passphrase)), mnemonic
 
+    # @staticmethod
+    def master_key_from_seed(seed):
 
+        I = hmac.new(b"Bitcoin seed", get_bytes(seed), hashlib.sha512).digest()
+        Il, Ir = I[:32], I[32:]
+
+        parse_Il = int.from_bytes(Il, 'big')
+        if parse_Il == 0 or parse_Il >= SECP256k1.order:
+            raise ValueError("Bad seed, resulting in invalid key!")
+
+        return CobraHDWallet(
+            secret=Il, chain=Ir, depth=0, index=0, fingerprint=b'\0\0\0\0')
 
 
 
