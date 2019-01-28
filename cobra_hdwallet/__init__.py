@@ -143,6 +143,20 @@ class CobraHDWallet:
         except:
             return False
 
+    @staticmethod
+    def master_key_from_entropy(passphrase='', language='english', strength=128):
+
+        if strength % 32 != 0:
+            raise ValueError("strength must be a multiple of 32")
+        if strength < 128 or strength > 256:
+            raise ValueError("strength should be >= 128 and <= 256")
+
+        entropy = rand_bytes(strength // 8)
+        mnemonic = Mnemonic(language=language)\
+            .to_mnemonic(entropy)
+
+        return CobraHDWallet.master_key_from_seed(
+            Mnemonic.to_seed(mnemonic, passphrase)), mnemonic
 
 
 
