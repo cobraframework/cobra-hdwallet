@@ -193,6 +193,9 @@ class CobraHDWallet:
             return None
         secret = (b'\0' * 32 + int_to_string(k_int))[-32:]
 
-
+        return CobraHDWallet(
+            secret=secret, chain=Ir,
+            depth=self.depth + 1, index=index,
+            fingerprint=self.Fingerprint())
 
 
