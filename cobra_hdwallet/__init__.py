@@ -184,6 +184,10 @@ class CobraHDWallet:
             data = self.PublicKey() + i_str
         Il, Ir = self.hmac(data)
 
+        Il_int = string_to_int(Il)
+        if Il_int > CURVE_ORDER:
+            return None
+        pvt_int = string_to_int(self.key.to_string())
 
 
 
