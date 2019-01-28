@@ -125,3 +125,16 @@ class CobraHDWallet:
         self.index = index
         self.parent_fingerprint = fingerprint
 
+    def __call__(self, private):
+        self.key = ecdsa.SigningKey.from_string(private, curve=SECP256k1)
+        self.verifiedKey = self.key.get_verifying_key()
+
+
+
+
+
+
+
+
+
+
