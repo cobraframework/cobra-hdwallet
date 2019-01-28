@@ -129,7 +129,7 @@ class CobraHDWallet:
         self.key = ecdsa.SigningKey.from_string(private, curve=SECP256k1)
         self.verifiedKey = self.key.get_verifying_key()
 
-    # @staticmethod
+    @staticmethod
     def master_key_from_mnemonic(mnemonic, passphrase=''):
 
         return CobraHDWallet.master_key_from_seed(
