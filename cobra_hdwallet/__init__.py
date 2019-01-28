@@ -171,6 +171,9 @@ class CobraHDWallet:
         return CobraHDWallet(
             secret=Il, chain=Ir, depth=0, index=0, fingerprint=b'\0\0\0\0')
 
+    def hmac(self, data):
+        I = hmac.new(self.chain, data, hashlib.sha512).digest()
+        return I[:32], I[32:]
 
 
 
