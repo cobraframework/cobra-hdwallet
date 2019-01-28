@@ -158,7 +158,7 @@ class CobraHDWallet:
         return CobraHDWallet.master_key_from_seed(
             Mnemonic.to_seed(mnemonic, passphrase)), mnemonic
 
-    # @staticmethod
+    @staticmethod
     def master_key_from_seed(seed):
 
         I = hmac.new(b"Bitcoin seed", get_bytes(seed), hashlib.sha512).digest()
