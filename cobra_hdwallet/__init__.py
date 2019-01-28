@@ -188,7 +188,10 @@ class CobraHDWallet:
         if Il_int > CURVE_ORDER:
             return None
         pvt_int = string_to_int(self.key.to_string())
-
+        k_int = (Il_int + pvt_int) % CURVE_ORDER
+        if k_int == 0:
+            return None
+        secret = (b'\0' * 32 + int_to_string(k_int))[-32:]
 
 
 
