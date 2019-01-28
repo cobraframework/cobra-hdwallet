@@ -135,7 +135,7 @@ class CobraHDWallet:
         return CobraHDWallet.master_key_from_seed(
             Mnemonic.to_seed(mnemonic, passphrase))
 
-    # @staticmethod
+    @staticmethod
     def check_master_key_from_mnemonic(mnemonic, language='english'):
         try:
             Mnemonic(language=language).check(mnemonic)
