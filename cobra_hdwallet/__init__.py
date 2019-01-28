@@ -175,5 +175,13 @@ class CobraHDWallet:
         I = hmac.new(self.chain, data, hashlib.sha512).digest()
         return I[:32], I[32:]
 
+    def DerivePrivateKey(self, index):
+
+        i_str = struct.pack(">L", index)
+
+
+
+
+
 
 
