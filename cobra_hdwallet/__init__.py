@@ -178,7 +178,11 @@ class CobraHDWallet:
     def DerivePrivateKey(self, index):
 
         i_str = struct.pack(">L", index)
-
+        if index & BIP32_HARDEN:
+            data = b'\0' + self.key.to_string() + i_str
+        else:
+            data = self.PublicKey() + i_str
+        Il, Ir = self.hmac(data)
 
 
 
