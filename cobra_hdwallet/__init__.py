@@ -211,6 +211,9 @@ class CobraHDWallet:
         return derivePrivateKey
 
     def fromIndex(self, index):
+        if not str(index)[0:2] != 'm/':
+            raise ValueError("Bad path, please insert only index int!")
+        return self.DerivePrivateKey(int(index))
 
 
 
