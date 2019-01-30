@@ -203,6 +203,13 @@ class CobraHDWallet:
         if str(path)[0:2] != 'm/':
             raise ValueError("Bad path, please insert like this type of path \"m/0'/0\"! ")
 
+        for index in path.lstrip('m/').split('/'):
+            if "'" in index:
+                derivePrivateKey = derivePrivateKey.DerivePrivateKey(int(index[:-1]) + BIP32_HARDEN)
+            else:
+                derivePrivateKey = derivePrivateKey.DerivePrivateKey(int(index))
+        return derivePrivateKey
+
 
 
 
