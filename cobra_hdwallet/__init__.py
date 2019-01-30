@@ -251,6 +251,8 @@ class CobraHDWallet:
         cK = self.PublicKey(private)
         return hashlib.new('ripemd160', sha256(cK).digest()).digest()
 
+    def Fingerprint(self, private=None):
+
 
 
 
