@@ -226,7 +226,7 @@ class CobraHDWallet:
             ck = b'\2' + padx
         return ck
 
-
+    def UncompressedPublicKey(self, private=None):
 
 
 
