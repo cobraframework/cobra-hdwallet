@@ -260,6 +260,9 @@ class CobraHDWallet:
             private = binascii.unhexlify(private)
             key = ecdsa.SigningKey.from_string(private, curve=SECP256k1)
             verifiedKey = key.get_verifying_key()
+            keccak_256.update(verifiedKey.to_string())
+            address = keccak_256.hexdigest()[24:]
+            return checksum_encode(address)
 
 
 
