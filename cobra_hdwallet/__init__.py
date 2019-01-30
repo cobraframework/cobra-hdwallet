@@ -269,6 +269,9 @@ class CobraHDWallet:
 
     def WalletImportFormat(self, private=None):
         if private:
+            private = binascii.unhexlify(private)
+            key = ecdsa.SigningKey.from_string(private, curve=SECP256k1)
+            raw = b'\x80' + key.to_string() + b'\x01'
             return check_encode(raw)
         raw = b'\x80' + self.key.to_string() + b'\x01'
         return check_encode(raw)
