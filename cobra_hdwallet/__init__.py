@@ -276,3 +276,4 @@ class CobraHDWallet:
         raw = b'\x80' + self.key.to_string() + b'\x01'
         return check_encode(raw)
 
+    def ExtendedKey(self, private=True, encoded=True):
