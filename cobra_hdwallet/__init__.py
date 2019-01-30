@@ -219,6 +219,16 @@ class CobraHDWallet:
         return self.key.to_string()
 
     def PublicKey(self, private=None):
+        if private:
+            private = binascii.unhexlify(private)
+            key = ecdsa.SigningKey.from_string(bytes(private), curve=SECP256k1)
+            verifiedKey = key.get_verifying_key()
+            padx = (b'\0' * 32 + int_to_string(verifiedKey.pubkey.point.x()))[-32:]
+            if self.verifiedKey.pubkey.point.y() & 1:
+                ck = b'\3' + padx
+            else:
+                ck = b'\2' + padx
+            return ck
         padx = (b'\0' * 32 + int_to_string(self.verifiedKey.pubkey.point.x()))[-32:]
         if self.verifiedKey.pubkey.point.y() & 1:
             ck = b'\3' + padx
