@@ -277,3 +277,4 @@ class CobraHDWallet:
         return check_encode(raw)
 
     def ExtendedKey(self, private=True, encoded=True):
+        version = EX_MAIN_PRIVATE[0] if private else EX_MAIN_PUBLIC[0]
