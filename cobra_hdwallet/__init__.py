@@ -279,3 +279,4 @@ class CobraHDWallet:
     def ExtendedKey(self, private=True, encoded=True):
         version = EX_MAIN_PRIVATE[0] if private else EX_MAIN_PUBLIC[0]
         depth = bytes(bytearray([self.depth]))
+        fingerprint = self.parent_fingerprint
