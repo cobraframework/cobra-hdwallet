@@ -245,6 +245,7 @@ class CobraHDWallet:
         return self.verifiedKey.to_string()
 
     def ChainCode(self):
+        return self.chain
 
 
 
