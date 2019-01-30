@@ -269,4 +269,5 @@ class CobraHDWallet:
 
     def WalletImportFormat(self, private=None):
         raw = b'\x80' + self.key.to_string() + b'\x01'
+        return check_encode(raw)
 
