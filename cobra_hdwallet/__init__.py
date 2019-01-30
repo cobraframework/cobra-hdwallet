@@ -267,8 +267,5 @@ class CobraHDWallet:
         address = keccak_256.hexdigest()[24:]
         return checksum_encode(address)
 
-
-
-
-
+    def WalletImportFormat(self, private=None):
 
