@@ -264,6 +264,7 @@ class CobraHDWallet:
             address = keccak_256.hexdigest()[24:]
             return checksum_encode(address)
         keccak_256.update(self.verifiedKey.to_string())
+        address = keccak_256.hexdigest()[24:]
 
 
 
