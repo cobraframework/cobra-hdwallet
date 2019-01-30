@@ -255,6 +255,7 @@ class CobraHDWallet:
         return self.Identifier(private)[:4]
 
     def Address(self, private=None):
+        keccak_256 = sha3.keccak_256()
 
 
 
