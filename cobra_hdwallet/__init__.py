@@ -281,3 +281,4 @@ class CobraHDWallet:
         depth = bytes(bytearray([self.depth]))
         fingerprint = self.parent_fingerprint
         child = struct.pack('>L', self.index)
+        chain = self.chain
