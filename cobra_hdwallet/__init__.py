@@ -210,7 +210,7 @@ class CobraHDWallet:
                 derivePrivateKey = derivePrivateKey.DerivePrivateKey(int(index))
         return derivePrivateKey
 
-
+    def fromIndex(self, index):
 
 
 
