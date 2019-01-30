@@ -215,6 +215,7 @@ class CobraHDWallet:
             raise ValueError("Bad path, please insert only index int!")
         return self.DerivePrivateKey(int(index))
 
+    def PrivateKey(self):
 
 
 
