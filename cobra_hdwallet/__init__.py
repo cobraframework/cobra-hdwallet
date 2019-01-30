@@ -198,4 +198,21 @@ class CobraHDWallet:
             depth=self.depth + 1, index=index,
             fingerprint=self.Fingerprint())
 
+    def fromPath(self, path):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
