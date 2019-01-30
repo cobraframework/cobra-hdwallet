@@ -247,6 +247,7 @@ class CobraHDWallet:
     def ChainCode(self):
         return self.chain
 
+    def Identifier(self, private=None):
 
 
 
