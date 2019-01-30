@@ -256,6 +256,10 @@ class CobraHDWallet:
 
     def Address(self, private=None):
         keccak_256 = sha3.keccak_256()
+        if private:
+            private = binascii.unhexlify(private)
+            key = ecdsa.SigningKey.from_string(private, curve=SECP256k1)
+            verifiedKey = key.get_verifying_key()
 
 
 
