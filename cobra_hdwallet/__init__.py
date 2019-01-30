@@ -199,7 +199,9 @@ class CobraHDWallet:
             fingerprint=self.Fingerprint())
 
     def fromPath(self, path):
-
+        derivePrivateKey = self
+        if str(path)[0:2] != 'm/':
+            raise ValueError("Bad path, please insert like this type of path \"m/0'/0\"! ")
 
 
 
