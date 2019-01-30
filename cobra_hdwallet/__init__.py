@@ -248,6 +248,7 @@ class CobraHDWallet:
         return self.chain
 
     def Identifier(self, private=None):
+        cK = self.PublicKey(private)
 
 
 
