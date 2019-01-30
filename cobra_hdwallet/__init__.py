@@ -218,7 +218,7 @@ class CobraHDWallet:
     def PrivateKey(self):
         return self.key.to_string()
 
-
+    def PublicKey(self, private=None):
 
 
 
