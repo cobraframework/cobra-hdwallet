@@ -254,6 +254,7 @@ class CobraHDWallet:
     def Fingerprint(self, private=None):
         return self.Identifier(private)[:4]
 
+    def Address(self, private=None):
 
 
 
