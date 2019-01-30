@@ -285,3 +285,7 @@ class CobraHDWallet:
 
         data = b'\x00' + self.PrivateKey()
         raw = version + depth + fingerprint + child + chain + data
+        if not encoded:
+            return raw
+        else:
+            return check_encode(raw)
