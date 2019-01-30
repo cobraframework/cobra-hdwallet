@@ -282,3 +282,6 @@ class CobraHDWallet:
         fingerprint = self.parent_fingerprint
         child = struct.pack('>L', self.index)
         chain = self.chain
+
+        data = b'\x00' + self.PrivateKey()
+        raw = version + depth + fingerprint + child + chain + data
