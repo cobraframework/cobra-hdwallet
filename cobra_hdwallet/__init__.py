@@ -216,6 +216,7 @@ class CobraHDWallet:
         return self.DerivePrivateKey(int(index))
 
     def PrivateKey(self):
+        return self.key.to_string()
 
 
 
