@@ -268,6 +268,8 @@ class CobraHDWallet:
         return checksum_encode(address)
 
     def WalletImportFormat(self, private=None):
+        if private:
+            return check_encode(raw)
         raw = b'\x80' + self.key.to_string() + b'\x01'
         return check_encode(raw)
 
