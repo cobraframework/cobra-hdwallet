@@ -334,7 +334,9 @@ class HDWallet:
         _ = CobraHDWallet.check_master_key_from_mnemonic(mnemonic, language)
         return _
 
-
+    def create_hdwallet(self, mnemonic=None, passphrase=''):
+        if mnemonic is None:
+            mnemonic = self.generate_mnemonic()
 
 
 
