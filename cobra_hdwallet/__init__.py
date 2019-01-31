@@ -313,6 +313,16 @@ class HDWallet:
             }
         }
 
+        self.hdwallet_private = {
+            "coin": "ETH",
+            "name": "Ethereum",
+            "address": "",
+            "wif": "",
+            "finger_print": "",
+            "private_key": "",
+            "public_key": "",
+            "uncompressed_public_key": ""
+        }
 
 
 
