@@ -18,5 +18,14 @@ def test_generate_mnemonic():
     assert jpCheck
 
 
+def test_create_hdwallet():
+
+    mnemonic = hdWallet.generate_mnemonic()
+
+    created = hdWallet.create_hdwallet(mnemonic, 'password')
+
+    assert len(created["private_key"]) == 64
+
+    assert hdWallet.check_mnemonic(created["mnemonic"])
 
 
