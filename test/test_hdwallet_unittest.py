@@ -28,4 +28,14 @@ class UnittestHDWallet(TestCase, HDWallet):
 
         self.assertTrue(self.check_mnemonic(created["mnemonic"]))
 
+    def test_hdwallet_form_private(self):
 
+        mnemonic = self.generate_mnemonic()
+
+        created = self.create_hdwallet(mnemonic, 'password')
+
+        created_by_private = self.hdwallet_from_private(created["private_key"])
+
+        self.assertEqual(created["address"], created_by_private["address"])
+
+        self.assertEqual(created["public_key"], created_by_private["public_key"])
