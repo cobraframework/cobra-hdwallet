@@ -329,6 +329,7 @@ class HDWallet:
         _, mnemonic = CobraHDWallet.master_key_from_entropy(language=language, strength=strength)
         return mnemonic
 
+    @staticmethod
     def check_mnemonic(mnemonic, language='english'):
         _ = CobraHDWallet.check_master_key_from_mnemonic(mnemonic, language)
         return _
