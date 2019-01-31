@@ -18,5 +18,14 @@ class UnittestHDWallet(TestCase, HDWallet):
 
         self.assertTrue(jpCheck)
 
+    def test_create_hdwallet(self):
+
+        mnemonic = self.generate_mnemonic()
+
+        created = self.create_hdwallet(mnemonic, 'password')
+
+        self.assertEqual(len(created["private_key"]), 64)
+
+        self.assertTrue(self.check_mnemonic(created["mnemonic"]))
 
 
