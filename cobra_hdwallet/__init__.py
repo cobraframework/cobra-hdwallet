@@ -324,6 +324,7 @@ class HDWallet:
             "uncompressed_public_key": ""
         }
 
+    @staticmethod
     def generate_mnemonic(language='english', strength=128):
         _, mnemonic = CobraHDWallet.master_key_from_entropy(language=language, strength=strength)
         return mnemonic
