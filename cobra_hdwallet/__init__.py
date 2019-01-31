@@ -301,6 +301,9 @@ class HDWallet:
             "mnemonic": "",
             "wif": "",
             "finger_print": "",
+            "chain_code": "",
+            "private_key": "",
+            "public_key": "",
             "uncompressed_public_key": "",
             "serialized": {
                 "private_key_hex": "",
