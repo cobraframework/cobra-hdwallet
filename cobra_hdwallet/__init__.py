@@ -297,6 +297,8 @@ class HDWallet:
         self.hdwallet = {
             "coin": "ETH",
             "name": "Ethereum",
+            "address": "",
+            "mnemonic": "",
             "wif": "",
             "finger_print": "",
             "uncompressed_public_key": "",
