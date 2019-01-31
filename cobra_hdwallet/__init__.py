@@ -338,7 +338,12 @@ class HDWallet:
         if mnemonic is None:
             mnemonic = self.generate_mnemonic()
 
-
+        master_key = CobraHDWallet.master_key_from_mnemonic(mnemonic, passphrase)
+        master_key = master_key.fromIndex(44 + 0x80000000)
+        master_key = master_key.fromIndex(60 + 0x80000000)
+        master_key = master_key.fromIndex(0 + 0x80000000)
+        master_key = master_key.fromIndex(0)
+        master_key = master_key.fromIndex(0)
 
 
 
