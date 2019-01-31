@@ -29,3 +29,14 @@ def test_create_hdwallet():
     assert hdWallet.check_mnemonic(created["mnemonic"])
 
 
+def test_hdwallet_form_private():
+
+    mnemonic = hdWallet.generate_mnemonic()
+
+    created = hdWallet.create_hdwallet(mnemonic, 'password')
+
+    created_by_private = hdWallet.hdwallet_from_private(created["private_key"])
+
+    assert created["address"] == created_by_private["address"]
+
+    assert created["public_key"] == created_by_private["public_key"]
