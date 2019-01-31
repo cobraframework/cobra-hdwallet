@@ -293,6 +293,20 @@ class CobraHDWallet:
 
 class HDWallet:
 
+    def __init__(self):
+        self.hdwallet = {
+            "coin": "ETH",
+            "name": "Ethereum",
+            "wif": "",
+            "finger_print": "",
+            "uncompressed_public_key": "",
+            "serialized": {
+                "private_key_hex": "",
+                "public_key_hex": "",
+                "xprivate_key_base58": "",
+                "xpublic_key_base58": "",
+            }
+        }
 
 
 
