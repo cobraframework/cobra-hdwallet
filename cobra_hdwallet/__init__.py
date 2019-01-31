@@ -360,3 +360,16 @@ class HDWallet:
 
         return self.hdwallet
 
+    def hdwallet_from_private(self, private):
+        if len(private) != 64:
+            raise ValueError("Bad private key, if length must be 64")
+
+        master_key = CobraHDWallet.master_key_from_mnemonic(self.generate_mnemonic())
+        self.hdwallet_private["address"] = master_key.Address(private)
+        self.hdwallet_private["wif"] = master_key.WalletImportFormat(private)
+        self.hdwallet_private["finger_print"] = master_key.Fingerprint(private).hex()
+        self.hdwallet_private["private_key"] = private
+        self.hdwallet_private["public_key"] = master_key.PublicKey(private).hex()
+        self.hdwallet_private["uncompressed_public_key"] = master_key.UncompressedPublicKey(private).hex()
+
+        return self.hdwallet_private
