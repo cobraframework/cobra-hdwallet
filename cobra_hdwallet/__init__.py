@@ -289,3 +289,18 @@ class CobraHDWallet:
             return raw
         else:
             return check_encode(raw)
+
+
+class HDWallet:
+
+
+
+
+
+
+
+
+
+
+
+
