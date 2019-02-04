@@ -3,13 +3,13 @@ from setuptools import setup
 setup(
     name="cobra-hdwallet",
     version='0.1.0',
-    description='',
+    description='It\'s HDWallet Generator for Ethereum blockchain.',
     long_description='TODO',
     license='MIT',
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
     url='https://github.com/cobraframework/cobra-hdwallet',
-    python_requires='>=3.5,<3.7',
+    python_requires='3.5,<3.7',
     packages=['cobra_hdwallet'],
     install_requires=[
         'ecdsa==0.13',
