@@ -1,68 +1,102 @@
-<p align="center">		
-  <img src="https://raw.githubusercontent.com/Cobraframework/pytest-cobra/master/pytest-cobra.png">		
+<p align="center">
+    <img src="file:///home/meheret/PycharmProjects/cobra-hdwallet/hdwallet.png">
 </p>
 
-# Cobra-HDWallet ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg?style=for-the-badge)
+# Cobra-HDWallet ![Cobra](https://img.shields.io/badge/Cobra-Framework-EB1D25.svg?style=for-the-badge&colorA=0E1626&url=https://cobraframework.github.io&&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAzCAYAAADRlospAAAACXBIWXMAAAsSAAALEgHS3X78AAAD90lEQVRogdVaO1LjQBDtVW2OA8XCkVK8J0A3wDdYE2+ATrBrbmDSjcwN7BuIbEOTKrIVbKQAog3ZatcbMWp69ENY4lW5/NFY0//pj768vLzQqZAHYUREez9L931t+aEM5EE4JaIFEc2J6MK6dCCiJ/zGn9f86sJY7wzkQTghogiEXylLHgUzNm79LF222a83BiDtJaR9VrGUGZhWrLnzszRuuu/X9qSWYRH+veFfjNls2B+IaCY0NW2zf2cGYCqrFoQ/W7a+E/fi+9xgzaINHZ0YyIMwhtSrTEVipjkpBMFmd0dEEz9Ln9rQ0oqBPAhnkKLLCavwJw/C336W/lTWsNMneJd7TmBmavht7MR5ELLEf3Ug3MY/IkqJKPazlAm2iSQjfUsrsSWsW7yvbC3VMgAn3dRI3ThlAkntqCy9OWzbmNwW76zNhAnCPhHWXiFaJXgR7rOSJlbJAEwmqbD1ezhl4rhu32sCv7nBTz+I6C8I49cEe+0MU8o9ptKMnAzUEP/AEu1yclqnM5tHghN552fpylpjrrPE11X3UxmAtPYK8c8gfNOWcAczhtCpjFKWz7Gw5q7o5GJgp9g8Ex/JGP6RyIOQNXQJf4g0JjyF+OUYiAcW2JvpSUy0slFiAPYpQ+VQxBNMyvjGBYJACVIDmsMshyDeANnpAV9vUFMUKBjAhUvx/wc7OgwIm4aSkG0NaClsq8TqA2ETfY7o9coAnEMWH/d9ln7vAaLP1rpF4QtGA5qkx2A6NuzTnrXAKUfBgMwCH4d0XAdkulLJQC8nbZ9QBHqk2UPslylDbXI2EA7WtmxGE0+rQZtklwNBBpWZh1TWxvNIiddw1IDML8bmvFWYvUnmPhs+GwNv/NVDRVS5aEQ4F6Q8eYrNy0WjAEpciZ2nhCbX4qHxpmd01AASNhk6tcWjY4BPZ+PE8uAaFQOObJmLfXIxcKXVnwNirmy9sRnQkrfGPfoTQBt6vDIAP9iKBfEYtIDqS0bGB1Ns2QeZLGDORqIFTfpFiVlqbFmNJBvfhipuHB3xg5+lxWErUwnV1oYwJXRJtHZ+qfwtMYA64E784fzUFRoOUm3PraxVtGRuiV6kjcs8CNen0AT2WLsay3K9q7nraq07m6x9oKalr/qimk5joXYac39yb1oaPRMfVxB/7QokdROaBcKrdtMtZl3van5B6isl+hlcVw05mszI6sZMW4yZWjk6tOh6HIFg83GnCY2y2RSO5ZKS2bCYceE3o3aTnkf4HDV4HGHR5Pxp9axExwF3W9xq08heGKBujxg0xT1mEa18qvPTKmDEDOm6lqFmvswS7xQMenncBj7CTsn2zZ9dvsK2zYQeB9jvzrGI6D/IKL/L4Ssv7AAAAABJRU5ErkJggg==)
 
-*PyTest plugin for testing Smart Contracts for Ethereum blockchain.*
+*It's HDWallet Generator for Ethereum blockchain.*
 
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
 
-## Requirements
+## Installation
 
-Step 1: Install solc
-
+Install cobra-hdwallet
 ```
-npm install -g solc
-```
-or
-```
-sudo add-apt-repository ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install solc
-```
-
-Step 2: Install PyTest
-```bash
-pip install -U pytest
-```
-
-Step 3: Install plugin PyTest-Cobra
-```
-pip install pytest-cobra
+pip install cobra-hdwallet
 ```
 
 ## Usage
 
-#### Execute your test suite
-
-##### 1: Testing Solidity file
+#### # Creating HDWallet ![Hdwallet](https://img.shields.io/badge/Live-Hdwallet-EB1D25.svg?style=flat-square&&colorA=0E1626&url=https://cobraframework.github.io/#hdwallet&&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAzCAYAAADRlospAAAACXBIWXMAAAsSAAALEgHS3X78AAAD90lEQVRogdVaO1LjQBDtVW2OA8XCkVK8J0A3wDdYE2+ATrBrbmDSjcwN7BuIbEOTKrIVbKQAog3ZatcbMWp69ENY4lW5/NFY0//pj768vLzQqZAHYUREez9L931t+aEM5EE4JaIFEc2J6MK6dCCiJ/zGn9f86sJY7wzkQTghogiEXylLHgUzNm79LF222a83BiDtJaR9VrGUGZhWrLnzszRuuu/X9qSWYRH+veFfjNls2B+IaCY0NW2zf2cGYCqrFoQ/W7a+E/fi+9xgzaINHZ0YyIMwhtSrTEVipjkpBMFmd0dEEz9Ln9rQ0oqBPAhnkKLLCavwJw/C336W/lTWsNMneJd7TmBmavht7MR5ELLEf3Ug3MY/IkqJKPazlAm2iSQjfUsrsSWsW7yvbC3VMgAn3dRI3ThlAkntqCy9OWzbmNwW76zNhAnCPhHWXiFaJXgR7rOSJlbJAEwmqbD1ezhl4rhu32sCv7nBTz+I6C8I49cEe+0MU8o9ptKMnAzUEP/AEu1yclqnM5tHghN552fpylpjrrPE11X3UxmAtPYK8c8gfNOWcAczhtCpjFKWz7Gw5q7o5GJgp9g8Ex/JGP6RyIOQNXQJf4g0JjyF+OUYiAcW2JvpSUy0slFiAPYpQ+VQxBNMyvjGBYJACVIDmsMshyDeANnpAV9vUFMUKBjAhUvx/wc7OgwIm4aSkG0NaClsq8TqA2ETfY7o9coAnEMWH/d9ln7vAaLP1rpF4QtGA5qkx2A6NuzTnrXAKUfBgMwCH4d0XAdkulLJQC8nbZ9QBHqk2UPslylDbXI2EA7WtmxGE0+rQZtklwNBBpWZh1TWxvNIiddw1IDML8bmvFWYvUnmPhs+GwNv/NVDRVS5aEQ4F6Q8eYrNy0WjAEpciZ2nhCbX4qHxpmd01AASNhk6tcWjY4BPZ+PE8uAaFQOObJmLfXIxcKXVnwNirmy9sRnQkrfGPfoTQBt6vDIAP9iKBfEYtIDqS0bGB1Ns2QeZLGDORqIFTfpFiVlqbFmNJBvfhipuHB3xg5+lxWErUwnV1oYwJXRJtHZ+qfwtMYA64E784fzUFRoOUm3PraxVtGRuiV6kjcs8CNen0AT2WLsay3K9q7nraq07m6x9oKalr/qimk5joXYac39yb1oaPRMfVxB/7QokdROaBcKrdtMtZl3van5B6isl+hlcVw05mszI6sZMW4yZWjk6tOh6HIFg83GnCY2y2RSO5ZKS2bCYceE3o3aTnkf4HDV4HGHR5Pxp9axExwF3W9xq08heGKBujxg0xT1mEa18qvPTKmDEDOm6lqFmvswS7xQMenncBj7CTsn2zZ9dvsK2zYQeB9jvzrGI6D/IKL/L4Ssv7AAAAABJRU5ErkJggg==)
 
 ```
-pytest --cobra Contracts.sol
+from cobra_hdwallet import HDWallet
+
+# init HDWallet
+hdWallet = HDWallet()
+
+# Generate seed
+mnemonic = hdWallet.generate_mnemonic("english")
+
+# Check seed it is not required
+# if not hdWallet.check_mnemonic(mnemonic, "english"):
+#     exit()
+
+# Create HDWallet by seed and password.
+# enHDWallet = hdWallet.create_hdwallet(mnemonic) # Without password
+enHDWallet = hdWallet.create_hdwallet(mnemonic, "password")
+
+# Print Generated HDWallet
+print(enHDWallet)
 ```
-import_remappings
+```OUTPUT```
+
 ```
-pytest --cobra Contracts.sol --remapping ["/home/path/dir/"]
+{
+    'coin': '...',
+    'name': '...', 
+    'address': '...', 
+    'mnemonic': '...',
+    'wif': '...', 
+    'finger_print': '...', 
+    'chain_code': '...', 
+    'private_key': '...',
+    'public_key': '...', 
+    'uncompressed_public_key': '...', 
+    'serialized': {
+        'private_key_hex': '...', 
+        'public_key_hex': '...', 
+        'xprivate_key_base58': '...', 
+        'xpublic_key_base58': '...'
+    }
+}
 ```
 
-##### 2: Testing Contracts Json file
+#### # Get HDWallet form Private Key ![Hdwallet-Private](https://img.shields.io/badge/Live-Hdwallet_Private-EB1D25.svg?style=flat-square&&colorA=0E1626&url=https://cobraframework.github.io/#hdwallet/private&&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAzCAYAAADRlospAAAACXBIWXMAAAsSAAALEgHS3X78AAAD90lEQVRogdVaO1LjQBDtVW2OA8XCkVK8J0A3wDdYE2+ATrBrbmDSjcwN7BuIbEOTKrIVbKQAog3ZatcbMWp69ENY4lW5/NFY0//pj768vLzQqZAHYUREez9L931t+aEM5EE4JaIFEc2J6MK6dCCiJ/zGn9f86sJY7wzkQTghogiEXylLHgUzNm79LF222a83BiDtJaR9VrGUGZhWrLnzszRuuu/X9qSWYRH+veFfjNls2B+IaCY0NW2zf2cGYCqrFoQ/W7a+E/fi+9xgzaINHZ0YyIMwhtSrTEVipjkpBMFmd0dEEz9Ln9rQ0oqBPAhnkKLLCavwJw/C336W/lTWsNMneJd7TmBmavht7MR5ELLEf3Ug3MY/IkqJKPazlAm2iSQjfUsrsSWsW7yvbC3VMgAn3dRI3ThlAkntqCy9OWzbmNwW76zNhAnCPhHWXiFaJXgR7rOSJlbJAEwmqbD1ezhl4rhu32sCv7nBTz+I6C8I49cEe+0MU8o9ptKMnAzUEP/AEu1yclqnM5tHghN552fpylpjrrPE11X3UxmAtPYK8c8gfNOWcAczhtCpjFKWz7Gw5q7o5GJgp9g8Ex/JGP6RyIOQNXQJf4g0JjyF+OUYiAcW2JvpSUy0slFiAPYpQ+VQxBNMyvjGBYJACVIDmsMshyDeANnpAV9vUFMUKBjAhUvx/wc7OgwIm4aSkG0NaClsq8TqA2ETfY7o9coAnEMWH/d9ln7vAaLP1rpF4QtGA5qkx2A6NuzTnrXAKUfBgMwCH4d0XAdkulLJQC8nbZ9QBHqk2UPslylDbXI2EA7WtmxGE0+rQZtklwNBBpWZh1TWxvNIiddw1IDML8bmvFWYvUnmPhs+GwNv/NVDRVS5aEQ4F6Q8eYrNy0WjAEpciZ2nhCbX4qHxpmd01AASNhk6tcWjY4BPZ+PE8uAaFQOObJmLfXIxcKXVnwNirmy9sRnQkrfGPfoTQBt6vDIAP9iKBfEYtIDqS0bGB1Ns2QeZLGDORqIFTfpFiVlqbFmNJBvfhipuHB3xg5+lxWErUwnV1oYwJXRJtHZ+qfwtMYA64E784fzUFRoOUm3PraxVtGRuiV6kjcs8CNen0AT2WLsay3K9q7nraq07m6x9oKalr/qimk5joXYac39yb1oaPRMfVxB/7QokdROaBcKrdtMtZl3van5B6isl+hlcVw05mszI6sZMW4yZWjk6tOh6HIFg83GnCY2y2RSO5ZKS2bCYceE3o3aTnkf4HDV4HGHR5Pxp9axExwF3W9xq08heGKBujxg0xT1mEa18qvPTKmDEDOm6lqFmvswS7xQMenncBj7CTsn2zZ9dvsK2zYQeB9jvzrGI6D/IKL/L4Ssv7AAAAABJRU5ErkJggg==)
 
-Compile your contracts into a package (soon to be ethPM-compliant)
 ```
-solc --combined-json abi,bin,bin-runtime contracts/ > Contracts.json
-```
-Testing Contracts.json
-```
-pytest --cobra Contracts.json
+from cobra_hdwallet import HDWallet
+
+# init HDWallet
+hdWallet = HDWallet()
+
+# Get HDWallet from private key
+private_key = 'bc42cee69a730913a84df8b70eee15517c0b56e8c8cc36ba3d11bbad91ee5456'
+pvHDWallet = hdWallet.hdwallet_from_private(private_key)
+
+# Print HDWallet
+print(pvHDWallet)
 ```
 
-##### 3: Testing Contracts yaml file 
-```Comming soon with Cobra Framework```
+```OUTPUT```
+
+```
+{
+    'coin': '...',
+    'name': '...',
+    'address': '...',
+    'wif': '...',
+    'finger_print': '...',
+    'private_key': '...',
+    'public_key': '...',
+    'uncompressed_public_key': '...'
+}
+```
 
 ## Further help
-##### PyTest
-Go check out the [PyTest](http://pytest.org).
+##### Cobra Framework
+Go check out the [Cobra](http://cobraframework.github.io).
 
 ## Donation
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)](https://en.cryptobadges.io/donate/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)
