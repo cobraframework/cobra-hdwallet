@@ -6,7 +6,7 @@
 
 *It's HDWallet Generator for Ethereum blockchain.*
 
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+![GitHub](https://img.shields.io/github/license/cobraframework/cobra-hdwallet.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
 
 ## Installation
@@ -95,8 +95,11 @@ print(pvHDWallet)
 ```
 
 ## Further help
-##### Cobra Framework
+##### # Cobra Framework
 Go check out the [Cobra](http://cobraframework.github.io).
+
+## Author
+##### # Meheret Tesfaye [@meherett](http://github.com/meherett).
 
 ## Donation
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)](https://en.cryptobadges.io/donate/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)
