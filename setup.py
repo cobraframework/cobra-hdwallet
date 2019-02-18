@@ -13,7 +13,7 @@ setup(
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
     url='https://github.com/cobraframework/cobra-hdwallet',
-    python_requires='3.5,<3.7',
+    python_requires='>=3.5,<3.7',
     packages=['cobra_hdwallet'],
     install_requires=[
         'ecdsa==0.13',
