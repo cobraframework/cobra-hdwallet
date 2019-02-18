@@ -1,4 +1,6 @@
+include *.lock
 include *.png
 include *.txt
 include LICENSE
+include Pipfile
 recursive-include example *.py
