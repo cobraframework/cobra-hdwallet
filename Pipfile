@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 pytest = ">=3.7"
 twine = "*"
+pyyaml = "*"
+request = ">=2.20.0"
 
 [packages]
 cobra-hdwallet = {editable = true,path = "."}
