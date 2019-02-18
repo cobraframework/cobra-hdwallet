@@ -19,9 +19,6 @@ from mnemonic.mnemonic import Mnemonic
 from two1.bitcoin.utils import rand_bytes
 from ecdsa.ecdsa import int_to_string, string_to_int
 
-__base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-__base58_alphabet_bytes = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-__base58_radix = len(__base58_alphabet)
 
 MIN_ENTROPY_LEN = 128
 BIP32_HARDEN = 0x80000000
@@ -29,8 +26,11 @@ CURVE_GEN = ecdsa.ecdsa.generator_secp256k1
 CURVE_ORDER = CURVE_GEN.order()
 FIELD_ORDER = SECP256k1.curve.p()
 INFINITY = ecdsa.ellipticcurve.INFINITY
+ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+ALPHABET_BYTES = b'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 EX_MAIN_PRIVATE = [codecs.decode('0488ade4', 'hex')]
 EX_MAIN_PUBLIC = [codecs.decode('0488b21e', 'hex'), codecs.decode('049d7cb2', 'hex')]
+RADIX = len(ALPHABET)
 
 
 def checksum_encode(address):
@@ -71,14 +71,14 @@ def __string_to_int(data):
 def encode(data):
     enc = ''
     val = __string_to_int(data)
-    while val >= __base58_radix:
-        val, mod = divmod(val, __base58_radix)
-        enc = __base58_alphabet[mod] + enc
+    while val >= RADIX:
+        val, mod = divmod(val, RADIX)
+        enc = ALPHABET[mod] + enc
     if val:
-        enc = __base58_alphabet[val] + enc
+        enc = ALPHABET[val] + enc
 
     n = len(data) - len(data.lstrip(b'\0'))
-    return __base58_alphabet[0] * n + enc
+    return ALPHABET[0] * n + enc
 
 
 def check_encode(raw):
@@ -92,7 +92,7 @@ def decode(data):
 
     val = 0
     for (i, c) in enumerate(data[::-1]):
-        val += __base58_alphabet_bytes.find(c) * (__base58_radix ** i)
+        val += ALPHABET_BYTES.find(c) * (RADIX ** i)
 
     dec = bytearray()
     while val >= 256:
