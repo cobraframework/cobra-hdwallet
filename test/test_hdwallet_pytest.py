@@ -39,4 +39,4 @@ def test_hdwallet_form_private():
 
     assert created["address"] == created_by_private["address"]
 
-    assert created["public_key"] == created_by_private["public_key"]
+    assert created["private_key"] == created_by_private["private_key"]
