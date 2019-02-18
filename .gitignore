@@ -3,6 +3,7 @@
 # Setuptools stuff
 build/
 dist/
+/.tox
 cobra_hdwallet.egg-info/
 
 # Python stuff
