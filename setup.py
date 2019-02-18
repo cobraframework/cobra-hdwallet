@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name="cobra-hdwallet",
-    version='0.1.0',
+    version='0.2.0',
     description='It\'s HDWallet Generator for Ethereum blockchain.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,7 +24,7 @@ setup(
         'eth_keyfile==0.5.1'
     ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
