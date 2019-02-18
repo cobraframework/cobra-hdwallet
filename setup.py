@@ -1,10 +1,14 @@
 from setuptools import setup
 
+with open("README.md", "r") as readme:
+    long_description = readme.read()
+
 setup(
     name="cobra-hdwallet",
     version='0.1.0',
     description='It\'s HDWallet Generator for Ethereum blockchain.',
-    long_description='TODO',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     license='MIT',
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
