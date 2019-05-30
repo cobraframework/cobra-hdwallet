@@ -9,6 +9,7 @@
 
 ![GitHub](https://img.shields.io/github/license/cobraframework/cobra-hdwallet.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0xD32AAEDF28A848e21040B6F643861A9077F83106)](https://en.cryptobadges.io/donate/0xD32AAEDF28A848e21040B6F643861A9077F83106)
 
 ## Installation
 
@@ -21,18 +22,18 @@ pip install cobra-hdwallet
 
 #### # Creating HDWallet <a href="http://cobraframework.github.io/#hdwallet" style="margin-top: 10px;">![Hdwallet](https://img.shields.io/badge/Live-Hdwallet-EB1D25.svg?style=flat-square&&colorA=0E1626&url=https://cobraframework.github.io/#hdwallet)</a>
 
-```
+```python
 from cobra_hdwallet import HDWallet
 
 # init HDWallet
 hdWallet = HDWallet()
 
-# Generate seed
+# Generate mnemonic
 mnemonic = hdWallet.generate_mnemonic("english")
 
-# Check seed it is not required
-# if not hdWallet.check_mnemonic(mnemonic, "english"):
-#     exit()
+# Check mnemonic it is not required
+if not hdWallet.check_mnemonic(mnemonic, "english"):
+    exit()
 
 # Create HDWallet by seed and password.
 # enHDWallet = hdWallet.create_hdwallet(mnemonic) # Without password
@@ -43,7 +44,7 @@ print(enHDWallet)
 ```
 ```OUTPUT```
 
-```
+```json5
 {
     'coin': '...',
     'name': '...', 
@@ -66,7 +67,7 @@ print(enHDWallet)
 
 #### # Get HDWallet form Private Key <a href="http://cobraframework.github.io/#hdwallet/private" style="margin-top: 10px;">![Hdwallet-Private](https://img.shields.io/badge/Live-Hdwallet_Private-EB1D25.svg?style=flat-square&&colorA=0E1626&url=https://cobraframework.github.io/#hdwallet/private)</a>
 
-```
+```python
 from cobra_hdwallet import HDWallet
 
 # init HDWallet
@@ -82,7 +83,7 @@ print(pvHDWallet)
 
 ```OUTPUT```
 
-```
+```json5
 {
     'coin': '...',
     'name': '...',
@@ -99,9 +100,11 @@ print(pvHDWallet)
 ##### # Cobra Framework
 Go check out the [Cobra](http://cobraframework.github.io).
 
-## Author
-##### # Meheret Tesfaye [@meherett](http://github.com/meherett).
+## Author ✒️
 
-## Donation
-##### Bitcoin *3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk*
-##### Ethereum *0xD32AAEDF28A848e21040B6F643861A9077F83106*
+* ***Meheret Tesfaye*** - *Initial work* - [Cobra](https://github.com/cobraframework)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
