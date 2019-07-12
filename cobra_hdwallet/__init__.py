@@ -12,11 +12,11 @@ import struct
 import codecs
 import hashlib
 import binascii
+import random
 
 from hashlib import sha256
 from ecdsa.curves import SECP256k1
 from mnemonic.mnemonic import Mnemonic
-from two1.bitcoin.utils import rand_bytes
 from ecdsa.ecdsa import int_to_string, string_to_int
 
 
@@ -130,6 +130,11 @@ class CobraHDWallet:
         self.verifiedKey = self.key.get_verifying_key()
 
     @staticmethod
+    def generate_entropy():
+        return random.randint(0, 2 ** 128 - 1) \
+            .to_bytes(16, byteorder='big')
+
+    @staticmethod
     def master_key_from_mnemonic(mnemonic, passphrase=''):
 
         return CobraHDWallet.master_key_from_seed(
@@ -151,7 +156,7 @@ class CobraHDWallet:
         if strength < 128 or strength > 256:
             raise ValueError("strength should be >= 128 and <= 256")
 
-        entropy = rand_bytes(strength // 8)
+        entropy = CobraHDWallet.generate_entropy()
         mnemonic = Mnemonic(language=language)\
             .to_mnemonic(entropy)
 

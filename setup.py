@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name="cobra-hdwallet",
-    version='0.2.0',
+    version='0.3.1',
     description='It\'s HDWallet Generator for Ethereum blockchain.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,11 +13,10 @@ setup(
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
     url='https://github.com/cobraframework/cobra-hdwallet',
-    python_requires='>=3.5,<3.7',
+    python_requires='>=3.6,<4',
     packages=['cobra_hdwallet'],
     install_requires=[
         'ecdsa==0.13',
-        'two1==3.10.9',
         'base58==0.2.2',
         'pysha3==1.0.2',
         'mnemonic==0.13',
