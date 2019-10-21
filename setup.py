@@ -16,7 +16,7 @@ setup(
     python_requires='>=3.6,<4',
     packages=['cobra_hdwallet'],
     install_requires=[
-        'ecdsa==0.13',
+        'ecdsa==0.13.3',
         'base58==0.2.2',
         'pysha3==1.0.2',
         'mnemonic==0.13',
